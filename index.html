@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Sukishi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="wheel-container">
+            <h1 class="wheel-title">Lucky Sukishi</h1>
+            <canvas id="wheelCanvas" width="500" height="500"></canvas>
+            <img id="spinButton" src="logo.png" alt="Spin Button" onclick="spin()">
+            <div id="arrow"></div> <!-- Add arrow here -->
+        </div>
+        <div class="controls">
+            <button onclick="showSettings()">Setting</button>
+            <div id="settings" class="settings">
+                <button onclick="showSettings()" class="close-btn">X</button>
+                <br><p>ตั้งค่าโอกาสที่จะได้ 1 ถึง 100</p><br>
+                <input type="text" id="item" placeholder="ชื่อ">
+                <input type="number" id="weight" placeholder="โอกาส (1-100)" min="1" max="100">
+                <button onclick="addItem()">เพิ่ม</button>
+                <ul id="itemList"></ul>
+                <button onclick="reset()">เริ่มใหม่</button>
+            </div>
+            <div id="result" class="result">
+                <button class="close-result-btn" onclick="hideResult()">X</button>
+                <span id="resultText" class="result-text"></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

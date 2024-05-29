@@ -1,0 +1,207 @@
+/* Import font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap');
+
+/* General styles */
+* {
+    font-family: "Noto Sans Thai", sans-serif;
+}
+
+body {
+    font-family: "Noto Sans Thai", sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    background-color: #81818141;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    max-width: 675px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wheel-container {
+    margin-bottom: 20px;
+    position: relative; /* Add position relative */
+}
+
+.wheel-title {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #b87333;
+}
+
+/* Arrow styles */
+#arrow {
+    width: 0; 
+    height: 0; 
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 40px solid red;
+    position: absolute;
+    top: 57.5%;
+    left: calc(50% + 250px); /* ระยะตั้งห่างจากศูนย์กลาง */
+    transform: translateY(-50%);
+}
+
+
+/* Controls styles */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.settings .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+}
+
+/* Form element styles */
+.controls input[type="text"],
+.controls input[type="number"],
+.controls button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.controls input[type="text"],
+.controls input[type="number"] {
+    width: 200px;
+}
+
+.controls input[type="text"]:focus,
+.controls input[type="number"]:focus {
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+/* Button styles */
+.controls button {
+    background-color: #b87333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #965e29;
+}
+
+.controls p {
+    margin-top: 5px;
+}
+
+/* List styles */
+#itemList {
+    list-style: none;
+    padding: 0;
+}
+
+#itemList li {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+/* Remove button styles */
+.remove-button {
+    margin-left: 10px;
+    padding: 4px 8px;
+    color: red;
+    cursor: pointer;
+}
+
+/* Result styles */
+.result {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid #333;
+    background-color: #f0f0f0;
+    display: none;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 200px;
+}
+
+.close-result-btn {
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.centered-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wheelCanvas {
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    display: block;
+    animation: spin 20s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+/* Spin button styles */
+#spinButton {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
